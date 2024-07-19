@@ -16,8 +16,6 @@
 </head>
 
 <body>
-
-
 <div class="page-wrapper">
  	
     
@@ -332,67 +330,7 @@
 <script src="js/wow.js"></script>
 <script src="js/validate.js"></script>
 <script src="js/script.js"></script>
-<script>
-            // Máscaras de entrada
-            $("#dataNascimento").mask("99/99/9999");
-            $("#rg").mask("99.999.999-9");
-            $("#cpf").mask("999.999.999-99");
-            $("#cep").mask("99999-999");
-            $("#telefone").mask("(99) 99999-9999");
-            $("#telefoneResponsavel").mask("(99) 99999-9999");
 
-            // Calcular idade e desabilitar campos
-            $("#dataNascimento").on("blur", function() {
-                var dataNascimento = $(this).val();
-                if (dataNascimento) {
-                    var dataAtual = new Date();
-                    var anoAtual = dataAtual.getFullYear();
-                    var mesAtual = dataAtual.getMonth() + 1;
-                    var diaAtual = dataAtual.getDate();
-
-                    var dataNascimentoArray = dataNascimento.split("/");
-                    var anoNascimento = parseInt(dataNascimentoArray[2]);
-                    var mesNascimento = parseInt(dataNascimentoArray[1]);
-                    var diaNascimento = parseInt(dataNascimentoArray[0]);
-
-                    var idade = anoAtual - anoNascimento;
-
-                    if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNascimento)) {
-                        idade--;
-                    }
-
-                    $("#idade").val(idade);
-
-                    // Desabilitar campos se idade for maior que 18
-                    if (idade >= 18) {
-                        $("#responsavelFields").addClass("disabled-fields");
-                    } else {
-                        $("#responsavelFields").removeClass("disabled-fields");
-                    }
-                }
-            });
-
-            // Busca de endereço pelo CEP
-            $("#cep").on("blur", function() {
-                var cep = $(this).val().replace(/\D/g, '');
-                if (cep.length === 8) {
-                    $.ajax({
-                        url: 'https://viacep.com.br/ws/' + cep + '/json/',
-                        dataType: 'json',
-                        success: function(data) {
-                            if (data.erro) {
-                                alert("CEP inválido.");
-                            } else {
-                                $("#endereco").val(data.logradouro);
-                                $("#bairro").val(data.bairro);
-                                $("#cidade").val(data.localidade);
-                                $("#uf").val(data.uf);
-                            }
-                        }
-                    });
-                }
-            });
-        </script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var $_Tawk_API={},$_Tawk_LoadStart=new Date();

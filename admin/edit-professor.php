@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-	<meta name="robots" content="" />
-	<meta name="description" content="Edumin - Bootstrap Admin Dashboard" />
-	<meta property="og:title" content="Edumin - Bootstrap Admin Dashboard" />
-	<meta property="og:description" content="Edumin - Bootstrap Admin Dashboard" />
-	<meta property="og:image" content="https://edumin.dexignlab.com/xhtml/social-image.png" />
-	<meta name="format-detection" content="telephone=no">
-	
-	<!-- FAVICONS ICON -->
-	<link rel="icon" href="images/zoeicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" type="image/x-icon" href="images/zoeicon.png" />
-	
-	<!-- PAGE TITLE HERE -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Zoe</title>
-	
-	<!-- MOBILE SPECIFIC -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- STYLESHEETS -->
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link rel="stylesheet" href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="css/style.css">
+	
+	<!-- Pick date -->
     <link rel="stylesheet" href="./vendor/pickadate/themes/default.css">
     <link rel="stylesheet" href="./vendor/pickadate/themes/default.date.css">
 
 </head>
+
 <body>
 
     <!--*******************
@@ -54,7 +42,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-     <?php include("head.php"); ?>
+               <?php include("head.php"); ?>
 
         <!--**********************************
             Nav header end
@@ -72,145 +60,109 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-       <?php include("menu.php"); ?>
+   <?php include("menu.php"); ?>
 
         <!--**********************************
             Sidebar end
         ***********************************-->
 
-		
-		
         <!--**********************************
             Content body start
         ***********************************-->
         <div class="content-body">
             <!-- row -->
             <div class="container-fluid">
-				    
+			
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Professores</h4>
+                            <h4>Editar Professor</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                            <li class="breadcrumb-item active"><a href="add-professor.html">Professores</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Professor</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active"><a href="professores.html">Professores</a></li>
+                            <li class="breadcrumb-item active"><a href="edit-professor.htmedit-professorl">Adicionar Professor</a></li>
                         </ol>
                     </div>
                 </div>
-				<?php 
-                    include('processa_cadastro.php');
-                ?>
-
+				
 				<div class="row">
 					<div class="col-xl-12 col-xxl-12 col-sm-12">
-						<div class="card">
-							<div class="card-header">
+                        <div class="card">
+                            <div class="card-header">
+								<h5 class="card-title">Basic Info</h5>
 							</div>
 							<div class="card-body">
-								<form action="#" method="post">
+                                <form action="#" method="post">
 									<div class="row">
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">Nome Completo</label>
-												<input type="text" class="form-control">
+												<label class="form-label">First Name</label>
+												<input type="text" class="form-control" value="Harry">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">Telefone</label>
-												<input type="text" class="form-control">
-											</div>
-										</div>
-									</div>
-									
-									<div class="row">
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Email</label>
-												<input type="text" class="form-control">
+												<label class="form-label">Last Name</label>
+												<input type="text" class="form-control" value="Parker">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">Data de Nascimento</label>
-												<input name="datepicker" class="datepicker-default form-control" id="datepicker1">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Cpf</label>
-												<input type="text" class="form-control">
+												<label class="form-label">Email Here</label>
+												<input type="text" class="form-control" value="info@example.com">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">CEP</label>
-												<input type="text" class="form-control">
+												<label class="form-label">Joining Date</label>
+												<input name="datepicker" class="datepicker-default form-control" id="datepicker" value="20 August 2021">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">Endereço</label>
-												<input type="text" class="form-control">
+												<label class="form-label">Password</label>
+												<input type="password" class="form-control" value="jsandjn">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">Bairro</label>
-												<input type="text" class="form-control">
+												<label class="form-label">Confirm Password</label>
+												<input type="password" class="form-control" value="jsandjn">
 											</div>
 										</div>
-									</div>
-									<div class="row">
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label class="form-label">Nº</label>
-											<input type="text" class="form-control">
-										</div>
-									</div>	
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label class="form-label">Cidade</label>
-											<input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label class="form-label">Estado</label>
-											<input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-12">
-										<div class="form-group">
-											<label class="form-label">UF</label>
-											<input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="row">
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">Sexo</label>
+												<label class="form-label">Mobile Number</label>
+												<input type="text" class="form-control" value="+91 123 456 7890">
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-12">
+											<div class="form-group">
+												<label class="form-label">Gender</label>
 												<select class="form-control">
-													<option value=""></option>
-													<option value="Male">Masculino</option>
-													<option value="Female">Feminino</option>
+													<option value="Gender">Gender</option>
+													<option value="Male" selected>Male</option>
+													<option value="Female">Female</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">Cursos</label>
+												<label class="form-label">Designation</label>
+												<input type="text" class="form-control" value="Senior Manager">
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-12">
+											<div class="form-group">
+												<label class="form-label">Department</label>
 												<select class="form-control">
 													<option value="Department">Department</option>
 													<option value="html">HTML</option>
 													<option value="css">CSS</option>
-													<option value="javascript">JavaScript</option>
+													<option value="javascript" selected>JavaScript</option>
 													<option value="angular">Angular</option>
 													<option value="angular">React</option>
 													<option value="vuejs">Vue.js</option>
@@ -222,39 +174,34 @@
 												</select>
 											</div>
 										</div>
-									</div>
-									<div class="row">
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">Formação</label>
-												<input type="text" class="form-control">
+												<label class="form-label">Date of Birth</label>
+												<input name="datepicker" class="datepicker-default form-control" id="datepicker1" value="20 August 2021">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">Data de entrada</label>
-												<input name="datepicker" class="datepicker-default form-control" id="datepicker">
+												<label class="form-label">Education</label>
+												<input type="text" class="form-control" value="M.COM, B.COM, B.A">
 											</div>
 										</div>
-									</div>
-									<div class="row">
 										<div class="col-lg-12 col-md-12 col-sm-12">
 											<div class="form-group fallback w-100">
 												<input type="file" class="dropify" data-default-file="">
 											</div>
 										</div>
-									</div>
-									<div class="row">
 										<div class="col-lg-12 col-md-12 col-sm-12">
-											<button type="submit" class="btn btn-primary">Enviar</button>
-											<button type="submit" class="btn btn-light">Cancelar</button>
+											<button type="submit" class="btn btn-primary">Submit</button>
+											<button type="submit" class="btn btn-light">Cencel</button>
 										</div>
 									</div>
 								</form>
-							</div>
-						</div>
-					</div>
+                            </div>
+                        </div>
+                    </div>
 				</div>
+				
             </div>
         </div>
         <!--**********************************
@@ -274,6 +221,15 @@
             Footer end
         ***********************************-->
 
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
     </div>
     <!--**********************************
         Main wrapper end
@@ -283,7 +239,7 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-	<script src="vendor/global/global.min.js"></script>
+<script src="vendor/global/global.min.js"></script>
 	<!--0<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>-->
     <script src="js/custom.min.js"></script>
 	<script src="js/dlabnav-init.js"></script>
@@ -300,6 +256,6 @@
 	
 	<!-- Pickdate -->
     <script src="./js/plugins-init/pickadate-init.js"></script>
-
+	
 </body>
 </html>

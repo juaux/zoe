@@ -32,20 +32,7 @@
 </head>
 <body>
 
-    <!--*******************
-        Preloader start
-    ********************-->
-    <div id="preloader">
-        <div class="sk-three-bounce">
-            <div class="sk-child sk-bounce1"></div>
-            <div class="sk-child sk-bounce2"></div>
-            <div class="sk-child sk-bounce3"></div>
-        </div>
-    </div>
-    <!--*******************
-        Preloader end
-    ********************-->
-
+   
     <!--**********************************
         Main wrapper start
     ***********************************-->
@@ -101,9 +88,7 @@
                         </ol>
                     </div>
                 </div>
-				<?php 
-                    include('processa_cadastro.php');
-                ?>
+				
 
 				<div class="row">
 					<div class="col-xl-12 col-xxl-12 col-sm-12">
@@ -111,12 +96,13 @@
 							<div class="card-header">
 							</div>
 							<div class="card-body">
-								<form action="#" method="post">
+							<form action="proconexao.php" method="POST">
+
 									<div class="row">
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
 												<label class="form-label">Nome Completo</label>
-												<input type="text" class="form-control">
+												<input type="text"  name="nome" class="form-control">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">

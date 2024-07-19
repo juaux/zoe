@@ -31,6 +31,28 @@
 </head>
 <body>
 
+<php
+Copiar
+<?php
+// Database connection details
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "zoe";
+
+// Connect to the database
+$conn = new mysqli($host, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL query to retrieve professor data
+$sql = "SELECT * FROM professores";
+$result = $conn->query($sql);
+?>
+
     <!--*******************
         Preloader start
     ********************-->
@@ -120,10 +142,10 @@
 												<thead>
 													<tr>
 														<th></th>
+                                                        <th>Matrícula</th>
 														<th>Nome</th>
 														<th>Curso</th>
-														<th>Genero</th>
-														<th>Formação</th>
+														<th>sexo</th>
 														<th>Telefone</th>
 														<th>Email</th>
 														<th>Data de entrada</th>
@@ -131,7 +153,89 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
+                                                <tbody>
+                                                <?php
+// Check if there are any results
+if ($result->num_rows > 0) {
+    // Loop through the results and populate the table
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td><img src='" . $row['foto'] . "' alt=' foto' width='50' height='50'></td>";
+        echo "<td>" . $row['matricula'] . "</td>";
+        echo "<td>" . $row['nome'] . "</td>";
+        echo "<td>" . $row['curso'] . "</td>";
+        echo "<td>" . $row['sexo'] . "</td>";
+        echo "<td>" . $row['telefone'] . "</td>";
+        echo "<td>" . $row['email'] . "</td>";
+        echo "<td>" . $row['dataentrada'] . "</td>";
+        echo "<td>
+            <a href=\"javascript:void(0);\" class=\"btn btn-sm btn-primary\"><i class=\"la la-pencil\"></i></a>
+<a href="javascript:void(0);" class="btn btn-sm btn-danger" data-id="<?php echo $row['id']; ?>"><i class="la la-trash-o"></i></a>
+        </td>";
+        echo "</tr>";
+    }
+} else {
+    echo "<tr><td colspan='10'>No professors found.</td></tr>";
+}
+?>
+
+$(document).ready(function() {
+    $(".btn-danger").click(function() {
+        var id = $(this).data("id");
+        deleteRow(id);
+    });
+
+    $(".btn-primary").click(function() {
+        var id = $(this).data("id");
+        editRow(id);
+    });
+});
+
+function deleteRow(id) {
+    $.ajax({
+        url: "delete_professor.php",
+        type: "POST",
+        data: { id: id },
+        success: function(response) {
+            // Remove the row from the table
+            $("tr[data-id='" + id + "']").remove();
+            // Display a success message or perform any other necessary actions
+            alert("Professor deleted successfully!");
+        },
+        error: function() {
+            alert("Error deleting professor!");
+        }
+    });
+}
+
+function editRow(id) {
+    // Load the professor data into a form for editing
+    $.ajax({
+        url: "get_professor.php",
+        type: "POST",
+        data: { id: id },
+        success: function(response) {
+            // Populate the form fields with the professor data
+            var professor = JSON.parse(response);
+            $("#foto").val(professor.foto);
+            $("#matricula").val(professor.matricula);
+            $("#nome").val(professor.nome);
+            $("#curso").val(professor.curso);
+            $("#sexo").val(professor.sexo);
+            $("#telefone").val(professor.telefone);
+            $("#email").val(professor.email);
+            $("#dataentrada").val(professor.dataentrada);
+            // Add a hidden input field for the professor ID
+            $("#professor_id").val(id);
+            // Display the form for editing
+            $("#edit-form").show();
+        },
+        error: function() {
+            alert("Error loading professor data!");
+        }
+    });
+}
+    </tbody>	<tr>
 														<td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
 														<td>Tiger Nixon</td>
 														<td>Architect</td>
