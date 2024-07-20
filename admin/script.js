@@ -20,3 +20,5 @@ function deleteTeacher(element) {
       });
     }
   }
+
+

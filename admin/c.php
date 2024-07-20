@@ -1,53 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-	<meta name="robots" content="" />
-	<meta name="description" content="Edumin - Bootstrap Admin Dashboard" />
-	<meta property="og:title" content="Edumin - Bootstrap Admin Dashboard" />
-	<meta property="og:description" content="Edumin - Bootstrap Admin Dashboard" />
-	<meta property="og:image" content="https://edumin.dexignlab.com/xhtml/social-image.png" />
-	<meta name="format-detection" content="telephone=no">
-	
-	<!-- FAVICONS ICON -->
-	<link rel="icon" href="images/zoeicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" type="image/x-icon" href="images/zoeicon.png" />
-	
-	<!-- PAGE TITLE HERE -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Zoe</title>
-	
-	<!-- MOBILE SPECIFIC -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- STYLESHEETS -->
-	<link rel="stylesheet" href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
-	<link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="stylesheet" href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+	
+	<!-- Pick date -->
+    <link rel="stylesheet" href="./vendor/pickadate/themes/default.css">
+    <link rel="stylesheet" href="./vendor/pickadate/themes/default.date.css">
 
 </head>
+
 <body>
 
-    
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
 
-   
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
     <div id="main-wrapper">
 
-       
+        <!--**********************************
+            Nav header start
+        ***********************************-->
                <?php include("head.php"); ?>
 
-     
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
              <?php include("procuraeicone.php"); ?>
 
-       
-        <?php include("menu.php"); ?>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
 
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+   <?php include("menu.php"); ?>
+
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
         <div class="content-body">
             <!-- row -->
             <div class="container-fluid">
@@ -66,18 +87,13 @@
                 </div>
 				
 				<div class="row">
-					<div class="col-lg-12">
-						<ul class="nav nav-pills mb-3">
-							<li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">Exibição em Lista</a></li>
-							<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">Exibição em Grade</a></li>
-						</ul>
-					</div>
+					
 					<div class="col-lg-12">
 						<div class="row tab-content">
 							<div id="list-view" class="tab-pane fade active show col-lg-12">
 								<div class="card">
 									<div class="card-header">
-                                      <h4 class="card-title">Lista de Todos os professores  </h4>
+                                      <h4 class="card-title"> </h4>
                                 <a href="add-professor.html" class="btn btn-primary">+ Novo</a>
                             </div>
                             
@@ -126,7 +142,7 @@
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['dataentrada'] . "</td>";
                     echo "<td>
-					
+					    <a href='#' class='btn btn-sm btn-primary edit-btn' data-target='#editModal' data-toggle='modal'><i class='la la-pencil'></i></a>
                         <a href='#' class='btn btn-sm btn-primary edit-btn'><i class='la la-pencil'></i></a>
                         <a href='#' class='btn btn-sm btn-danger delete-btn' data-id='" . $row['matricula'] . "' onclick='deleteTeacher(this)'><i class='la la-trash-o'></i></a>
                     </td>";
@@ -144,7 +160,29 @@
 </table>
 <script src="script.js"></script>
 </div>
-</div>
+
+ <!-- Modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document"> <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Conteúdo da página 'tesdit.html' -->
+          <iframe src="editprofessor.php" width="100%" height="600px"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Salvar Alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </div>
 </div>
