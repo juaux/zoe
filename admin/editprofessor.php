@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	
     <meta charset="utf-8">
@@ -35,120 +34,146 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Editar Professor</h4>
+                            <h4>Editar Profesxsor</h4>
                         </div>
                     </div>
                     
                 </div>
 				
-				<div class="row">
-					<div class="col-xl-12 col-xxl-12 col-sm-12">
-                        <div class="card">
-                            <div class="card-header">
-								<h5 class="card-title"></h5>
-							</div>
-							<div class="card-body">
-                                <form action="#" method="post">
-									<div class="row">
+				    
+							<form action="proconexao.php" method="POST">
+
+                            <div class="form-group">
+                            <label for="matricula">Matrícula:</label>
+                                    <input type="text" id="matricula" name="matricula" readonly>
+                                   
+                                    <div class="row">
+
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
-												<label class="form-label">First Name</label>
-												<input type="text" class="form-control" value="Harry">
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Last Name</label>
-												<input type="text" class="form-control" value="Parker">
+												<label class="form-label">Nome Completo</label>
+												<input type="text"  name="nome" class="form-control">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Email Here</label>
-												<input type="text" class="form-control" value="info@example.com">
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Joining Date</label>
-												<input name="datepicker" class="datepicker-default form-control" id="datepicker" value="20 August 2021">
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Password</label>
-												<input type="password" class="form-control" value="jsandjn">
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Confirm Password</label>
-												<input type="password" class="form-control" value="jsandjn">
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Mobile Number</label>
-												<input type="text" class="form-control" value="+91 123 456 7890">
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Gender</label>
-												<select class="form-control">
-													<option value="Gender">Gender</option>
-													<option value="Male" selected>Male</option>
-													<option value="Female">Female</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Designation</label>
-												<input type="text" class="form-control" value="Senior Manager">
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Department</label>
-												<select class="form-control">
-													<option value="Department">Department</option>
-													<option value="html">HTML</option>
-													<option value="css">CSS</option>
-													<option value="javascript" selected>JavaScript</option>
-													<option value="angular">Angular</option>
-													<option value="angular">React</option>
-													<option value="vuejs">Vue.js</option>
-													<option value="ruby">Ruby</option>
-													<option value="php">PHP</option>
-													<option value="asp">ASP.NET</option>
-													<option value="python">Python</option>
-													<option value="mysql">MySQL</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Date of Birth</label>
-												<input name="datepicker" class="datepicker-default form-control" id="datepicker1" value="20 August 2021">
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">Education</label>
-												<input type="text" class="form-control" value="M.COM, B.COM, B.A">
-											</div>
-										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12">
-											<div class="form-group fallback w-100">
-												<input type="file" class="dropify" data-default-file="">
-											</div>
-										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12">
-											<button type="submit" class="btn btn-primary">Submit</button>
-											<button type="submit" class="btn btn-light">Cencel</button>
-										</div>
-									</div>
+    <div class="form-group">
+        <label class="form-label">Telefone</label>
+        <input type="text" class="form-control" name="telefone"> 
+    </div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" name="email"> 
+    </div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">Data de Nascimento</label>
+        <input name="datanasc" class="datepicker-default form-control" id="datepicker1" > 
+    </div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">Cpf</label>
+        <input type="text" class="form-control" name="cpf"> 
+    </div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">CEP</label>
+        <input type="text" class="form-control" name="cep"> 
+    </div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">Endereço</label>
+        <input type="text" class="form-control" name="endereco"> 
+    </div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">Bairro</label>
+        <input type="text" class="form-control" name="bairro"> 
+    </div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">Nº</label>
+        <input type="text" class="form-control" name="numero"> 
+    </div>
+</div>	
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">Cidade</label>
+        <input type="text" class="form-control" name="cidade"> 
+    </div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">Estado</label>
+        <input type="text" class="form-control" name="estado"> 
+    </div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="form-group">
+        <label class="form-label">UF</label>
+        <input type="text" class="form-control" name="uf"> 
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="form-group">
+            <label class="form-label">Sexo</label>
+            <select class="form-control" name="sexo"> 
+                <option value=""></option>
+                <option value="Male">Masculino</option>
+                <option value="Female">Feminino</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="form-group">
+            <label class="form-label">Cursos</label>
+            <select class="form-control" name="curso"> 
+                <option value="Cursos">Cursos</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="angular">Angular</option>
+                <option value="angular">React</option>
+                <option value="vuejs">Vue.js</option>
+                <option value="ruby">Ruby</option>
+                <option value="php">PHP</option>
+                <option value="asp">ASP.NET</option>
+                <option value="python">Python</option>
+                <option value="mysql">MySQL</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="form-group">
+            <label class="form-label">Formação</label>
+            <input type="text" class="form-control" name="formacao"> 
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="form-group">
+            <label class="form-label">Data de entrada</label>
+            <input  name="dataentrada" class="datepicker-default form-control" id="datepicker"> 
+        </div>
+    </div>
+</div>
 								</form>
                             </div>
                         </div>
@@ -167,7 +192,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="http://dexignlab.com/" target="_blank">DexignLab</a> 2021</p>
+                <p>Copyright © Designed &amp; Developed by <a href="http://dexignlab.com/" target="_blank">Skynet</a> 2021</p>
             </div>
         </div>
         <!--**********************************

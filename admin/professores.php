@@ -32,6 +32,26 @@
 </head>
 
 </head>
+
+
+<script>
+    $(document).ready(function() {
+      // Captura o clique em qualquer linha da tabela
+      $('#example3 tbody tr').click(function() {
+        // Obtém os dados da linha clicada
+        var matricula = $(this).find('td:nth-child(2)').text();
+        var nome = $(this).find('td:nth-child(3)').text();
+        var curso = $(this).find('td:nth-child(4)').text();
+        // ... obtenha os outros dados da linha ...
+
+        // Passa os dados para a página modal
+        $('#editModal iframe').attr('src', 'editprofessor.php?matricula=' + matricula + '&nome=' + nome + '&curso=' + curso + '...');
+
+        // Abre o modal
+        $('#editModal').modal('show');
+      });
+    });
+  </script>
 <body>
 
     
@@ -122,7 +142,6 @@
                         echo "<td>" . $row['dataentrada'] . "</td>";
                         echo "<td>
                             <a href='#' class='btn btn-sm btn-primary edit-btn' data-target='#editModal' data-toggle='modal'><i class='la la-pencil'></i></a>
-                            <a href='#' class='btn btn-sm btn-primary edit-btn'><i class='la la-pencil'></i></a>
                             <a href='#' class='btn btn-sm btn-danger delete-btn' data-id='" . $row['matricula'] . "' onclick='deleteTeacher(this)'><i class='la la-trash-o'></i></a>
                         </td>";
                         echo "</tr>";
@@ -223,7 +242,7 @@
         
             <div class="footer">
                 <div class="copyright">
-                    <p>Copyright © Designed &amp; Developed by <a href="http://dexignlab.com/" target="_blank">DexignLab</a> 2021</p>
+                    <p>Copyright © Designed &amp; Developed by <a href="http://dexignlab.com/" target="_blank">Skynet</a> 2021</p>
                 </div>
             </div>
         
